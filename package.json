@@ -1,0 +1,11 @@
+{
+  "name": "walid-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio",
+  "scripts": {
+    "dev": "serve ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Echos of Timgad - Gameplay Programming Project by Walid Kettab">
+<title>Echos of Timgad — Walid Kettab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/project.css">
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<div class="ambient-glow"></div>
+<div class="flare flare-1"></div>
+<div class="flare flare-2"></div>
+<div class="flare flare-3"></div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">WK<span class="dot">.</span></a>
+  <a href="mailto:kettab.walid.dz@gmail.com" class="nav-cta">LET'S TALK <span class="arr">→</span></a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-overlay" id="mobileMenu">
+  <a href="index.html#work">Work</a>
+  <a href="index.html#about">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="mailto:kettab.walid.dz@gmail.com" style="font-style:italic; color:rgba(255,255,255,0.4)">Get in touch</a>
+</div>
+
+<div class="proj-page">
+  <div class="proj-left">
+    <a href="index.html#work" class="proj-back"><span>←</span> BACK TO WORK</a>
+    
+    <div class="proj-head">
+      <h1 class="reveal-text">Echos of<br>Timgad</h1>
+      <p class="proj-subhead fade-up">SoulsLike Combat System · 2024 · Internship Project</p>
+    </div>
+
+    <div class="proj-tabs fade-up" data-d="1">
+      <button class="tab-btn active" data-target="overview">OVERVIEW</button>
+      <button class="tab-btn" data-target="responsibilities">RESPONSIBILITIES</button>
+      <button class="tab-btn" data-target="tech">HIGHLIGHTS</button>
+    </div>
+
+    <div class="tab-content fade-up" data-d="2">
+      <div id="overview" class="tab-pane active">
+        <p>A gameplay showcase from Echos of Timgad, a PC action-adventure prototype built in Unreal Engine 5 and set in the ancient Roman city of Timgad, Algeria. The combat direction was inspired by Souls-like games, with a focus on strategic timing, readable attacks, stamina management, and responsive third-person gameplay.</p>
+        <br>
+        <p>During my internship at Shédio Design, I worked for a period of 5 months on Echos of Timgad. My contribution focused on gameplay programming: player locomotion, vaulting, backstabing, equipment, weapon handling, combat logic, stats, targeting, hit reactions, enemy AI, and gameplay polish.</p>
+      </div>
+      
+      <div id="responsibilities" class="tab-pane">
+        <ul style="list-style-type: square; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem;">
+          <li>Implemented a modular combat component for player and enemy characters</li>
+          <li>Built attack combinations with input buffering for smoother combo flow</li>
+          <li>Developed directional dodge logic connected to combat states and stamina usage</li>
+          <li>Created hit detection logic for applying damage during attacks</li>
+          <li>Implemented health, stamina, defense, and damage-related stat systems</li>
+          <li>Integrated multiple weapon types with different combat behavior</li>
+          <li>Worked on targeting, hit reactions, combat feedback, sound cues, and visual effects</li>
+          <li>Implemented enemy combat AI using AI Controllers, Behavior Trees, and Blackboards</li>
+          <li>Improved character animation integration using Animation Blueprints, IK Rig, and IK Retargeter</li>
+        </ul>
+      </div>
+
+      <div id="tech" class="tab-pane">
+        <ul style="list-style-type: square; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem;">
+          <li>Used Animation Blueprints and state machines to manage locomotion states such as idle, walk, run, jump, landing, and crouch</li>
+          <li>Used motion warping, animation montages, animation notifies, sphere traces, and components to build traversal and backstab mechanic</li>
+          <li>Designed a reusable equipment architecture using a base equippable actor class and base weapon actor class</li>
+          <li>Implemented combat foundations including combos, dodge, damage handling, hit detection, and death logic</li>
+          <li>Used maps for stat management, including base values, modified values, max constraints, health, stamina, armor, and defense</li>
+          <li>Used Behavior Trees and Blackboards to create AI decision-making, patrol, perception, chase, and attack behavior</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-right">
+    <div class="media-block fade-up">
+      <div class="media-lbl">GAMEPLAY SHOWCASE</div>
+      <div class="vid-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_54LPyy_77Q?autoplay=1&mute=1&loop=1&playlist=_54LPyy_77Q" title="Echos of Timgad Gameplay" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="proj-tags video-tags mt-2">
+        <span class="tag">Unreal Engine 5</span>
+        <span class="tag">Blueprints</span>
+        <span class="tag">Gameplay Programming</span>
+        <span class="tag">Animation Blueprint</span>
+        <span class="tag">Behavior Tree</span>
+        <span class="tag">Gameplay Tags</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/global.js"></script>
+<script>
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanes.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.getAttribute('data-target')).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

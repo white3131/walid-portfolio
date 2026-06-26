@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="GAS-Based Combat Framework by Walid Kettab">
+<title>GAS Combat Framework — Walid Kettab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/project.css">
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<div class="ambient-glow"></div>
+<div class="flare flare-1"></div>
+<div class="flare flare-2"></div>
+<div class="flare flare-3"></div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">WK<span class="dot">.</span></a>
+  <a href="mailto:kettab.walid.dz@gmail.com" class="nav-cta">LET'S TALK <span class="arr">→</span></a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-overlay" id="mobileMenu">
+  <a href="index.html#work">Work</a>
+  <a href="index.html#about">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="mailto:kettab.walid.dz@gmail.com" style="font-style:italic; color:rgba(255,255,255,0.4)">Get in touch</a>
+</div>
+
+<div class="proj-page">
+  <div class="proj-left">
+    <a href="index.html#work" class="proj-back"><span>←</span> BACK TO WORK</a>
+    
+    <div class="proj-head">
+      <h1 class="reveal-text">GAS-Based<br>Combat</h1>
+      <p class="proj-subhead fade-up">Unreal Engine 5 Gameplay Ability System Framework · 2025</p>
+    </div>
+
+    <div class="proj-tabs fade-up" data-d="1">
+      <button class="tab-btn active" data-target="overview">OVERVIEW</button>
+      <button class="tab-btn" data-target="responsibilities">RESPONSIBILITIES</button>
+      <button class="tab-btn" data-target="tech">HIGHLIGHTS</button>
+    </div>
+
+    <div class="tab-content fade-up" data-d="2">
+      <div id="overview" class="tab-pane active">
+        <p>A modular combat framework built around Unreal Engine 5 Gameplay Ability System, focused on responsive player input, scalable ability architecture, motion matching locomotion, combat feedback, attributes, effects, damage calculation, and reusable gameplay systems.</p>
+        <br>
+        <p>The objective of this project was to move from isolated gameplay features to a reusable combat framework where player actions, enemy behavior, damage, UI, animation, and feedback are connected through a modular GAS-based architecture.</p>
+      </div>
+      
+      <div id="responsibilities" class="tab-pane">
+        <ul style="list-style-type: square; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem;">
+          <li>Designed and implemented the gameplay framework architecture around Unreal Engine Gameplay Ability System</li>
+          <li>Created native Gameplay Tags for attributes, input, damage types, weapon states, abilities, montages, effects, and gameplay events</li>
+          <li>Implemented a custom Ability System Component to handle ability input through Gameplay Tags</li>
+          <li>Built replicated Attribute Sets for health, stamina, primary attributes, secondary attributes, resistances, and combat values</li>
+          <li>Implemented damage flow using Gameplay Effects, SetByCaller damage values, blocked hit state, critical hit state, and floating damage feedback</li>
+          <li>Structured abilities such as melee attacks, dodge, guard, equip weapon, projectile abilities, and special abilities</li>
+          <li>Designed a motion matching locomotion system from scratch for the framework</li>
+          <li>Modified attack animations in Cascadeur to improve weight, timing, spacing, and combat readability</li>
+        </ul>
+      </div>
+
+      <div id="tech" class="tab-pane">
+        <ul style="list-style-type: square; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem;">
+          <li>Used native Gameplay Tags as the communication layer between abilities, inputs, damage types, weapon states, montages, and effects</li>
+          <li>Mapped input tags to gameplay abilities so player input can activate abilities in a modular way</li>
+          <li>Created replicated attributes for Strength, Defense, Endurance, Vigor, Stamina Recovery Rate, Armor, Max Health, Max Stamina, Block Effectiveness, Critical Hit Chance, Posture Damage, Stamina Regeneration, and damage resistances</li>
+          <li>Extended the gameplay effect context to carry blocked hit and critical hit information through the damage pipeline</li>
+          <li>Connected PlayerState, AbilitySystemComponent, AttributeSet, HUD, and Widget Controllers to drive UI from gameplay data</li>
+          <li>Improved combat readability by editing attack animations in Cascadeur, adding more weight, clearer spacing, and better timing between key poses</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-right">
+    <div class="media-block fade-up">
+      <div class="media-lbl">GAS COMBAT FRAMEWORK</div>
+      <div class="vid-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5zmhMNUeTgA?autoplay=1&mute=1&loop=1&playlist=5zmhMNUeTgA" title="GAS Combat Framework" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="proj-tags video-tags mt-2">
+        <span class="tag">Unreal Engine 5</span>
+        <span class="tag">C++</span>
+        <span class="tag">Blueprints</span>
+        <span class="tag">GAS</span>
+        <span class="tag">Gameplay Tags</span>
+        <span class="tag">Attributes</span>
+        <span class="tag">Motion Matching</span>
+        <span class="tag">Cascadeur</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/global.js"></script>
+<script>
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanes.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.getAttribute('data-target')).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

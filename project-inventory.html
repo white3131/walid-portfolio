@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Inventory System Plugin by Walid Kettab">
+<title>Inventory Plugin — Walid Kettab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/project.css">
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<div class="ambient-glow"></div>
+<div class="flare flare-1"></div>
+<div class="flare flare-2"></div>
+<div class="flare flare-3"></div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">WK<span class="dot">.</span></a>
+  <a href="mailto:kettab.walid.dz@gmail.com" class="nav-cta">LET'S TALK <span class="arr">→</span></a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-overlay" id="mobileMenu">
+  <a href="index.html#work">Work</a>
+  <a href="index.html#about">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="mailto:kettab.walid.dz@gmail.com" style="font-style:italic; color:rgba(255,255,255,0.4)">Get in touch</a>
+</div>
+
+<div class="proj-page">
+  <div class="proj-left">
+    <a href="index.html#work" class="proj-back"><span>←</span> BACK TO WORK</a>
+    
+    <div class="proj-head">
+      <h1 class="reveal-text">Inventory<br>System</h1>
+      <p class="proj-subhead fade-up">Scalable Action-RPG Inventory Plugin for Unreal Engine · 2026</p>
+    </div>
+
+    <div class="proj-tabs fade-up" data-d="1">
+      <button class="tab-btn active" data-target="overview">OVERVIEW</button>
+      <button class="tab-btn" data-target="responsibilities">RESPONSIBILITIES</button>
+      <button class="tab-btn" data-target="tech">HIGHLIGHTS</button>
+    </div>
+
+    <div class="tab-content fade-up" data-d="2">
+      <div id="overview" class="tab-pane active">
+        <p>A C++ / UMG inventory plugin for Unreal Engine designed for action-adventure and RPG projects. The system is built to be game-ready, scalable, plugin-based, and easy to migrate into other projects, with support for item categories, stackable consumables, permanent fixed-slot items, limited reusable items, popup actions, item descriptions, and Gameplay Ability System integration.</p>
+        <br>
+        <p>The UI and interaction style are inspired by Lies of P, with a main inventory menu, category-based inventory pages, selectable slots, contextual item popups, and detailed item panels. The system is currently work in progress, but already supports core gameplay inventory behaviors such as starting items, permanent limited-use items, stack consumption, item selection, popup actions, and inventory page switching.</p>
+      </div>
+      
+      <div id="responsibilities" class="tab-pane">
+        <ul style="list-style-type: square; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem;">
+          <li>Designed the plugin architecture around reusable Unreal Engine C++ and UMG classes</li>
+          <li>Implemented the main inventory menu root with page switching between main menu, equipment, and spatial inventory pages</li>
+          <li>Built category-based inventory grids for Basic Items, Equippables, Consumables, and Craftables</li>
+          <li>Created a replicated inventory list using Fast Array-style inventory entries and runtime inventory item objects</li>
+          <li>Implemented item manifests using InstancedStruct based fragments for modular item data and behavior</li>
+          <li>Built support for stackable consumables, permanent fixed-slot items, and limited or unlimited reusable items</li>
+          <li>Implemented server-side consume logic for both limited reusable items and normal stackable items</li>
+          <li>Built item description logic using the Composite Design Pattern (Composite / Leaf) widget architecture driven by item fragments and gameplay tags</li>
+          <li>Structured the plugin to be portable and easy to migrate into other Unreal Engine projects</li>
+        </ul>
+      </div>
+
+      <div id="tech" class="tab-pane">
+        <ul style="list-style-type: square; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem;">
+          <li>Uses a Menu Root Widget as the top-level inventory UI controller, responsible for switching between main menu, equipment page, and spatial inventory page</li>
+          <li>Uses the InventoryComponent class to own replicated inventory data, create the inventory menu widget, handle pickups, add starting items, consume items, and open or close the inventory UI</li>
+          <li>Uses two Structures, InventoryFastArray and InventoryEntry to replicate runtime Inventory Item objects as inventory entries</li>
+          <li>Uses Item Manifest and InstancedStruct fragments to define item behavior in a modular way instead of hardcoding behavior by category</li>
+          <li>Separates item category from item behavior: category controls where an item appears, while fragments control what the item does</li>
+          <li>The plugin is designed to integrate with external systems such as stats, consumption effects, equipment logic, and Gameplay Effects/Abilities</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-right">
+    <div class="media-block fade-up">
+      <div class="media-lbl">INVENTORY PLUGIN SHOWCASE</div>
+      <div class="vid-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_qKVuJtk0nU?autoplay=1&mute=1&loop=1&playlist=_qKVuJtk0nU" title="Inventory System Plugin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="proj-tags video-tags mt-2">
+        <span class="tag">Unreal Engine 5</span>
+        <span class="tag">C++</span>
+        <span class="tag">UMG</span>
+        <span class="tag">Plugin Architecture</span>
+        <span class="tag">Fast Array Replication</span>
+        <span class="tag">TInstancedStruct</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/global.js"></script>
+<script>
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanes.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.getAttribute('data-target')).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
