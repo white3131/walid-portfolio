@@ -20,10 +20,10 @@
 
 .hero-img {
   width: 100%;
-  height: 120%;
+  height: 125%;
   /* Extra height for parallax */
   object-fit: cover;
-  object-position: top center;
+  object-position: center 25%;
   will-change: transform;
 }
 
@@ -636,10 +636,10 @@
     display: none;
   }
 
-  /* Make the portrait fill better on mobile */
+  /* Make the portrait fill better on mobile and push it up */
   .hero-img {
-    height: 110%;
-    object-position: 55% top;
+    height: 130%;
+    object-position: 65% 100%;
   }
 
   .hero-overlay {
